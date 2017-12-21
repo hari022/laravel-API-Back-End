@@ -7,11 +7,18 @@ use App\Detail;
 class ReportController extends Controller
 { 
     // Get all the details of the specific product
-    public function getListings($id)
+    public function getListings(Request $request)
     {
+        
 
+        $id = $request->input('id');
         //Fetch data according to the plan
-        $details = Detail::where('productid', $id)->get();
+        //foreach($id as $x){
+           // $data=[];
+            $details = Detail::whereIn('productid', $id)->get();
+            //array_push($data, $details);
+        //}
+       
     
          return response()->json($details,200);
         //return $plan;

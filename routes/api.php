@@ -19,7 +19,8 @@ Route::delete('details/{id}/{productId}/{name}', 'DetailsController@deleteDetail
 Route::post('newRecord', 'RecordsController@newRecord'); //add new record to the details table
 Route::post('newProduct', 'RecordsController@addNewProduct'); //add new product
 Route::post('updateDetail', 'DetailsController@updateDetail');// update specific row
-Route::get('listings/{id}', 'ReportController@getListings'); // get all the listings
+//Route::get('listings/{id}', 'ReportController@getListings'); // get all the listings
+Route::get('listings', 'ReportController@getListings');
 Route::get('details', 'ReportController@getAllDetails'); // get all the data from the details table
 
 
